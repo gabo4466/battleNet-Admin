@@ -1,26 +1,31 @@
 <html>
 <head>
-<?php
+    <?php
     include "includes/head.php";
-?>
+    ?>
+    <link rel="stylesheet" href="styles/login.css">
 </head>
 <body>
 
 
 <?php
-    include "includes/header.php";
-    include "includes/navbar.php";
+include "includes/header.php";
 ?>
 <section>
-    <h1>Añadir noticia</h1>
-    <h1>gestionar producto</h1>
-    <h1>gestionar foro</h1>
 
+    <div id="login">
+        <form action="controller/login.controller.php" method="post">
+            <h2>Ingresa tus credenciales</h2>
+            <div id="formLogin">
+                <input type="text" required name="email" placeholder="Correo...">
+                <input type="password" required name="pwd" placeholder="Contrase&#241;a...">
+                <button type="submit" name="submit">Iniciar sesión</button>
+            </div>
+        </form>
+    </div>
 </section>
-
-
-
 
 
 </body>
 </html>
+

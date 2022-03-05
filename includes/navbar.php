@@ -12,7 +12,7 @@
 <nav>
     <div id="navBar">
         <a id="closeNavBar" href="javascript:void(0)" onclick="closeNav()">&times;</a>
-        <a class="navOption" href="index.php">Inicio</a>
+        <a class="navOption" href="menu.php">Inicio</a>
         <?php
 
             if (isset($_SESSION["employeeId"])){
@@ -22,7 +22,6 @@
         <?php
             }else{
         ?>
-        <a class="navOption" href="login.php">Iniciar Sesión</a>
         <?php
             }
         ?>

@@ -13,11 +13,11 @@ class Login extends DBConnection {
 
         if (!$stmt->execute(array($email))){
             $stmt = null;
-            header("location: ../login.php?error=stmtfailed");
+            header("location: ../index.php?error=stmtfailed");
             exit();
         }
         if ($stmt->rowCount() == 0){
-            header("location: ../login.php?error=employeenotfound");
+            header("location: ../index.php?error=employeenotfound");
             exit();
         }
 
@@ -25,17 +25,17 @@ class Login extends DBConnection {
 
         $checkPwd = password_verify($pwd, $hashedPwd[0]["employees_password"]);
         if ($checkPwd == false){
-            header("location: ../login.php?error=employeenotfound");
+            header("location: ../index.php?error=employeenotfound");
             exit();
         }else if($checkPwd == true){
             $stmt = $this->connect()->prepare('SELECT * FROM employees WHERE employees_email = ?;');
             if (!$stmt->execute(array($email))){
                 $stmt = null;
-                header("location: ../login.php?error=stmtfailed");
+                header("location: ../index.php?error=stmtfailed");
                 exit();
             }
             if ($stmt->rowCount() == 0){
-                header("location: ../login.php?error=employeenotfound");
+                header("location: ../index.php?error=employeenotfound");
                 exit();
             }
             session_start();

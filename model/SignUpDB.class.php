@@ -1,7 +1,7 @@
 <?php
 require_once("DBConnection.class.php");
 require_once("Employee.class.php");
-class SignUp extends DBConnection {
+class SignUpDB extends DBConnection {
 
     /**
      * Metodo que comprueba no exista otro usuario con el email

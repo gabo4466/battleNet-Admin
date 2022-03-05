@@ -2,7 +2,7 @@
 
 class Product {
     private $id;
-    private $nombre;
+    private $name;
     private $desc;
     private $prize;
     private $stock;
@@ -10,15 +10,15 @@ class Product {
 
     /**
      * @param $id
-     * @param $nombre
+     * @param $name
      * @param $desc
      * @param $prize
      * @param $stock
      * @param $img
      */
-    public function __construct($nombre, $desc, $prize, $stock, $img, $id = "") {
+    public function __construct($name, $desc, $prize, $stock, $img, $id = "") {
         $this->id = $id;
-        $this->nombre = $nombre;
+        $this->name = $name;
         $this->desc = $desc;
         $this->prize = $prize;
         $this->stock = $stock;
@@ -42,15 +42,15 @@ class Product {
     /**
      * @return mixed
      */
-    public function getNombre() {
-        return $this->nombre;
+    public function getName() {
+        return $this->name;
     }
 
     /**
-     * @param mixed $nombre
+     * @param mixed $name
      */
-    public function setNombre($nombre) {
-        $this->nombre = $nombre;
+    public function setName($name) {
+        $this->name = $name;
     }
 
     /**
@@ -108,8 +108,5 @@ class Product {
     public function setImg($img) {
         $this->img = $img;
     }
-
-
-
 
 }

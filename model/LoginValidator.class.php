@@ -1,6 +1,6 @@
 <?php
-require_once ("Login.class.php");
-class LoginValidator extends Login {
+require_once("LoginDB.class.php");
+class LoginValidator extends LoginDB {
     private $email;
     private $pwd;
 

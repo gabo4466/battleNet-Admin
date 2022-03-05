@@ -1,7 +1,7 @@
 <?php
 require_once ("DBConnection.class.php");
 require_once("Employee.class.php");
-class Login extends DBConnection {
+class LoginDB extends DBConnection {
 
     /**
      * Metodo que realiza el login, en caso de que este sea correcto inicia la sesion

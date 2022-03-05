@@ -1,7 +1,7 @@
 <?php
-require_once("SignUp.class.php");
+require_once("SignUpDB.class.php");
 require_once("Employee.class.php");
-class SignUpValidator extends SignUp {
+class SignUpValidator extends SignUpDB {
 
     private $employee;
     private $pwd;

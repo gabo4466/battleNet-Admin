@@ -13,7 +13,7 @@
 ?>
 <section>
     <div class="formWrapper">
-        <form action="controller/signup.controller.php" method="post">
+        <form action="controller/addProduct.controller.php" method="post" enctype="multipart/form-data">
         <h2>Ingresa la información del producto</h2>
             <div class="formInner">
                 <label for="name">Nombre del producto</label>

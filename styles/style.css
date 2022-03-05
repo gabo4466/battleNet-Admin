@@ -13,8 +13,7 @@ body{
     grid-template-areas:
         "header header"
         "nav    nav"
-        "section    section"
-        "foot   foot";
+        "section    section";
 }
 /*
 **********************************
@@ -170,36 +169,5 @@ nav{
 **********************************
  */
 
-/*
-**********************************
-    FOOTER
-**********************************
- */
 
-footer{
-    grid-area: foot;
-    border-top: 1px solid #FFFFFF3D;
-    background: #3b3b3b;
-    width: 100%;
-    padding: 15px 0;
-
-}
-footer p{
-    text-align: center;
-    margin: 0;
-    color: #7C808C;
-}
-
-@media screen and (min-device-width: 1366px){
-
-    footer{
-
-    }
-
-}
-/*
-**********************************
-    FIN FOOTER
-**********************************
- */
 

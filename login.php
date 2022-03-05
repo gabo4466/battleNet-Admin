@@ -16,7 +16,7 @@ include "includes/navbar.php";
 
     <div id="login">
         <form action="controller/login.controller.php" method="post">
-            <h2>Inicia sesión</h2>
+            <h2>Ingresa tus credenciales</h2>
             <div id="formLogin">
                 <input type="text" required name="email" placeholder="Correo...">
                 <input type="password" required name="pwd" placeholder="Contrase&#241;a...">
@@ -25,9 +25,7 @@ include "includes/navbar.php";
         </form>
     </div>
 </section>
-<?php
-include "includes/footer.php";
-?>
+
 
 </body>
 </html>

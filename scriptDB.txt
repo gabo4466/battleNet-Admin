@@ -98,3 +98,5 @@ FOREIGN KEY (fk_threads) REFERENCES threads (id_threads),
 FOREIGN KEY (fk_users) REFERENCES users (id_users),
 PRIMARY KEY (id_comments)
 );
+
+insert into employees (employees_name, employees_nif, employees_address, employees_email, employees_password)  values ('Admin', '123456789', '', 'admin@battle.net.com', '$2y$10$2iHwtVWo3CDiWDLIZKTRqeGl.jweo/o5O8yO2HE0u9nMZ0QuPUO.G');

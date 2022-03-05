@@ -16,12 +16,12 @@ class LoginValidator extends Login {
     /**
      * Metodo que realiza el login del usuario
      */
-    public function loginUser(){
+    public function loginEmployee(){
         if($this->emptyInput() == false){
             header("location: ../signup.php?error=emptyinput");
             exit();
         }
-        $this->getUser($this->email, $this->pwd);
+        $this->getEmployee($this->email, $this->pwd);
 
     }
 

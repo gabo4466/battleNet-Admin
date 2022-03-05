@@ -13,7 +13,7 @@ if (isset($_POST["submit"])){
     $validator = new LoginValidator($email, $pwd);
 
     // Controlar errores
-    $validator->loginUser();
+    $validator->loginEmployee();
     header("location: ../index.php?error=none");
 
 }else{

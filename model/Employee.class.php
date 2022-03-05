@@ -1,28 +1,26 @@
 <?php
 
-class User {
+class Employee {
 
     private $id;
     private $name;
     private $nif;
     private $address;
     private $email;
-    private $nickname;
+
 
     /**
      * @param $name
      * @param $nif
      * @param $address
      * @param $email
-     * @param $nickname
      * @param $id;
      */
-    public function __construct($name, $nif, $address, $email, $nickname, $id = "") {
+    public function __construct($name, $nif, $address, $email, $id = "") {
         $this->name = strtolower(trim($name));
         $this->nif = strtoupper(trim($nif));
         $this->address = strtolower(trim($address));
         $this->email = strtolower(trim($email));
-        $this->nickname = trim($nickname);
         $this->id = $id;
     }
 
@@ -96,19 +94,7 @@ class User {
         $this->email = $email;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getNickname() {
-        return $this->nickname;
-    }
 
-    /**
-     * @param mixed $nickname
-     */
-    public function setNickname($nickname) {
-        $this->nickname = $nickname;
-    }
 
 
 

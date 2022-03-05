@@ -12,11 +12,12 @@
     include "includes/navbar.php";
 ?>
 <section>
-    <h1>INDEX</h1>
+    <h1>Añadir noticia</h1>
+    <h1>gestionar producto</h1>
+    <h1>gestionar foro</h1>
+
 </section>
-<?php
-    include "includes/footer.php";
-?>
+
 
 
 

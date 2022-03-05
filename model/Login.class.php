@@ -1,6 +1,6 @@
 <?php
 require_once ("DBConnection.class.php");
-require_once ("User.class.php");
+require_once("Employee.class.php");
 class Login extends DBConnection {
 
     /**
@@ -8,8 +8,8 @@ class Login extends DBConnection {
      * @param $email
      * @param $pwd
      */
-    protected function getUser($email, $pwd){
-        $stmt = $this->connect()->prepare('SELECT users_password FROM users WHERE users_email = ?;');
+    protected function getEmployee($email, $pwd){
+        $stmt = $this->connect()->prepare('SELECT employees_password FROM employees WHERE employees_email = ?;');
 
         if (!$stmt->execute(array($email))){
             $stmt = null;
@@ -17,34 +17,33 @@ class Login extends DBConnection {
             exit();
         }
         if ($stmt->rowCount() == 0){
-            header("location: ../login.php?error=usernotfound");
+            header("location: ../login.php?error=employeenotfound");
             exit();
         }
 
         $hashedPwd = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $checkPwd = password_verify($pwd, $hashedPwd[0]["users_password"]);
+        $checkPwd = password_verify($pwd, $hashedPwd[0]["employees_password"]);
         if ($checkPwd == false){
-            header("location: ../login.php?error=usernotfound");
+            header("location: ../login.php?error=employeenotfound");
             exit();
         }else if($checkPwd == true){
-            $stmt = $this->connect()->prepare('SELECT * FROM users WHERE users_email = ?;');
+            $stmt = $this->connect()->prepare('SELECT * FROM employees WHERE employees_email = ?;');
             if (!$stmt->execute(array($email))){
                 $stmt = null;
                 header("location: ../login.php?error=stmtfailed");
                 exit();
             }
             if ($stmt->rowCount() == 0){
-                header("location: ../login.php?error=usernotfound");
+                header("location: ../login.php?error=employeenotfound");
                 exit();
             }
             session_start();
-            $userAux = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $user = new User($userAux[0]["users_name"], $userAux[0]["users_nif"], $userAux[0]["users_address"], $userAux[0]["users_email"], $userAux[0]["users_nickname"], $userAux[0]["id_users"]);
-            $_SESSION["userId"] = $user->getId();
-            $_SESSION["userName"] = $user->getName();
-            $_SESSION["userEmail"] = $user->getEmail();
-            $_SESSION["userNickname"] = $user->getNickname();
+            $employeeAux = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $employee = new Employee($employeeAux[0]["employees_name"], $employeeAux[0]["employees_nif"], $employeeAux[0]["employees_address"], $employeeAux[0]["employees_email"], $employeeAux[0]["id_employees"]);
+            $_SESSION["employeeId"] = $employee->getId();
+            $_SESSION["employeeName"] = $employee->getName();
+            $_SESSION["employeeEmail"] = $employee->getEmail();
 
         }
 

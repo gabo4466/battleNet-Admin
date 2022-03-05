@@ -12,9 +12,10 @@
 ?>
 <section>
 
-    <h1>Añadir noticia</h1>
-    <a href="products.php">Gestión de productos</a>
-    <h1>gestionar foro</h1>
+    <h2>Añadir noticia</h2>
+    <h2><a href="products.php">Gestión de productos</a></h2>
+
+    <h2>gestionar foro</h2>
 
 </section>
 

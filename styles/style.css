@@ -47,6 +47,7 @@ header img{
 section{
     grid-area: section;
     display: grid;
+    align-content: start;
 }
 
 /*

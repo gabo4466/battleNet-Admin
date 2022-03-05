@@ -9,6 +9,7 @@ users_address varchar (128) not null,
 users_email varchar (128) not null,
 users_nickname varchar (128) not null,
 users_password varchar (128) not null,
+users_news tinyint not null,
 PRIMARY KEY (id_users)
 );
 

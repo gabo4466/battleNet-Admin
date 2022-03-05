@@ -1,19 +1,21 @@
-
 input{
     background: none;
     outline: 0;
     flex-grow: 1;
-    background: rgba(21, 23, 30, 0.84) none;
-    border: #0074E0 2px solid;
-    border-radius: 5px;
+    background: rgba(16, 17, 23, 0.84) none;
+    border: #ffffff 2px solid;
     position: relative;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
 }
+
  button{
-    background-color: #0074E0;
+    background-color: #ffffff;
+    color: #000;
     outline: 0;
     flex-grow: 1;
     border: 1px rgba(0, 116, 224, 0.47) solid;
-    border-radius: 1px;
     padding: 7px;
 }
 
@@ -31,12 +33,6 @@ h2{
     text-align: center;
 }
 
-input{
-    margin-bottom: 10px;
-    padding: 5px;
-    border-radius: 5px;
-    width: 100%;
-}
 section{
     grid-template-columns: 10% 80% 10%;
     grid-template-rows: 1fr 60%;
@@ -44,11 +40,6 @@ section{
     ". form ."
     ". . .";
 
-}
-
-body{
-    background-image: url("../assets/img/shadowLands.jpg");
-    background-position: center;
 }
 
 #signUp{
@@ -60,21 +51,14 @@ body{
     align-self: center;
 }
 
-#signUp form{
-    background-color: rgba(169, 176, 178, 0.4);
-    border: 3px #0074E0 solid;
-    border-radius: 5px;
+form{
+
+    border: 3px #ffffff solid;
     padding: 10px;
     width: 300px;
 }
 
-
 @media screen and (min-device-width: 600px){
-
-    #signUp form{
-        border: 3px #545e67 solid;
-    }
-
     #signUp{
         margin-top: 40px;
     }
@@ -82,17 +66,6 @@ body{
         width: 500px;
         padding: 40px;
     }
-    .navOption{
-        background: #60727c;
-    }
-    .navOption:hover{
-        background: rgba(184, 100, 55, 0.38);
-    }
-
-
-}
-@media screen and (min-device-width: 1366px){
-
 
 }
 

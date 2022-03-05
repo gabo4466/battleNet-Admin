@@ -1,16 +1,15 @@
 <?php
 require_once("DBConnection.class.php");
-require_once ("User.class.php");
-class SignUp extends DBConnection {
+require_once("Employee.class.php");
+class SignUpDB extends DBConnection {
 
     /**
      * Metodo que comprueba no exista otro usuario con el email
-     * @param $id_users
      * @param $email
      * @return bool|void
      */
     protected function checkEmail($email){
-        $stmt = $this->connect()->prepare('SELECT id_users FROM users WHERE users_email = ?;');
+        $stmt = $this->connect()->prepare('SELECT id_employees FROM employees WHERE employees_email = ?;');
 
         if (!$stmt->execute(array($email))){
             $stmt = null;
@@ -27,13 +26,13 @@ class SignUp extends DBConnection {
 
     /**
      * Metodo que inserta el usuario en la base de datos
-     * @param $user
+     * @param $employee
      */
-    protected function insertUser($user, $pwd){
-        $stmt = $this->connect()->prepare('INSERT INTO users (users_name, users_nif, users_address, users_email, users_nickname, users_password) VALUES (?, ?, ?, ?, ?, ?);');
+    protected function insertEmployee($employee, $pwd){
+        $stmt = $this->connect()->prepare('INSERT INTO employees (employees_name, employees_nif, employees_address, employees_email, employees_password) VALUES (?, ?, ?, ?, ?);');
         $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-        if (!$stmt->execute(array($user->getName(), $user->getNif(), $user->getAddress(), $user->getEmail(), $user->getNickname(), $hashedPwd))){
+        if (!$stmt->execute(array($employee->getName(), $employee->getNif(), $employee->getAddress(), $employee->getEmail(), $hashedPwd))){
             $stmt = null;
             header("location: ../signup.php?error=stmtfailed");
             exit();

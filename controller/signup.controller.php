@@ -6,17 +6,15 @@ if (isset($_POST["submit"])){
     foreach ($_POST as $key => $value){
         $$key = addslashes($value);
     }
-
-
     // Instancia de objetos para validar la entrada
     require_once "../model/SignUpValidator.class.php";
-    require_once "../model/User.class.php";
+    require_once "../model/Employee.class.php";
 
-    $user = new User($name, $nif, $address, $email, $nickname);
-    $validator = new SignUpValidator($user, $pwd, $pwdRepeat);
+    $employee = new Employee($name, $nif, $address, $email);
+    $validator = new SignUpValidator($employee, $pwd, $pwdRepeat);
 
     // Controlar errores
-    $validator->signUpUser();
+    $validator->signUpEmployee();
     header("location: ../signup.php?error=none");
 
 }else{

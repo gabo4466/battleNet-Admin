@@ -28,9 +28,9 @@
                 <label for="type">Tipo de producto</label>
                 <select name="type" id="type">
                     <option value="1">Juego</option>
-                    <option value="2">Estatuillas</option>
+                    <option value="2">Estatuilla</option>
                     <option value="3">Póster</option>
-                    <option value="4">Peluches</option>
+                    <option value="4">Peluche</option>
                     <option value="5">Ropa</option>
                 </select>
                 <label for="desc">Descripción</label>

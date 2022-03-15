@@ -20,6 +20,7 @@ products_prize double not null,
 products_stock int not null,
 products_img varchar (128) not null,
 products_desc text not null,
+products_type int not null,
 PRIMARY KEY (id_products)
 );
 

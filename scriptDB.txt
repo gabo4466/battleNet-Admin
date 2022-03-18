@@ -1,3 +1,4 @@
+drop database battlenet;
 create database battlenet;
 use battlenet;
 
@@ -81,12 +82,21 @@ FOREIGN KEY (fk_employees) REFERENCES employees (id_employees),
 PRIMARY KEY (id_news)
 );
 
+create table forum (
+id_forum int not null auto_increment,
+forum_name varchar (128) not null,
+forum_description varchar (128) not null,
+fk_employees int not null,
+FOREIGN KEY (fk_employees) REFERENCES employees (id_employees),
+PRIMARY KEY (id_forum)
+);
+
 create table channels (
 id_channels int not null auto_increment,
 channels_name varchar (128) not null,
 channels_description varchar (128) not null,
-fk_employees int not null,
-FOREIGN KEY (fk_employees) REFERENCES employees (id_employees),
+fk_forum int not null,
+FOREIGN KEY (fk_forum) REFERENCES forum (id_forum),
 PRIMARY KEY (id_channels)
 );
 

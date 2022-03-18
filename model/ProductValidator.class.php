@@ -49,7 +49,7 @@ class ProductValidator extends ProductDB{
      * @return bool
      */
     public function emptyInput() {
-        if ( empty($this->product->getName()) || empty($this->product->getPrize()) || empty($this->product->getStock()) || empty($this->product->getDesc()) || empty($this->product->getImg()) ) {
+        if ( empty($this->product->getName()) || empty($this->product->getPrize()) || empty($this->product->getDesc()) || empty($this->product->getImg()) ) {
             $result = true;
         } else {
             $result = false;

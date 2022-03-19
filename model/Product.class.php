@@ -7,6 +7,7 @@ class Product {
     private $prize;
     private $stock;
     private $img;
+    private $type;
 
     /**
      * @param $id
@@ -15,14 +16,16 @@ class Product {
      * @param $prize
      * @param $stock
      * @param $img
+     * @param $type
      */
-    public function __construct($name, $desc, $prize, $stock, $img, $id = "") {
+    public function __construct($name, $desc, $prize, $stock, $img, $type, $id = "") {
         $this->id = $id;
         $this->name = $name;
         $this->desc = $desc;
         $this->prize = $prize;
         $this->stock = $stock;
         $this->img = $img;
+        $this->type = $type;
     }
 
     /**
@@ -108,5 +111,21 @@ class Product {
     public function setImg($img) {
         $this->img = $img;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getType() {
+        return $this->type;
+    }
+
+    /**
+     * @param mixed $type
+     */
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+
 
 }

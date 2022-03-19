@@ -18,7 +18,7 @@ if (isset($_POST["submit"])){
     // Instancia de objetos para validar la entrada
     require_once "../model/ProductValidator.class.php";
     require_once "../model/Product.class.php";
-    $product = new Product($name, $desc, $prize, $stock, $img);
+    $product = new Product($name, $desc, $prize, $stock, $img, $type);
     $validator = new ProductValidator($product);
 
     // Controlar errores

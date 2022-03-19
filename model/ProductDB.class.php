@@ -7,9 +7,9 @@ class ProductDB extends DBConnection {
      * @param $product
      */
     protected function insertProduct($product){
-        $stmt = $this->connect()->prepare('INSERT INTO products (products_name, products_desc, products_prize, products_stock, products_img) VALUES (?, ?, ?, ?, ?);');
+        $stmt = $this->connect()->prepare('INSERT INTO products (products_name, products_desc, products_prize, products_stock, products_img, products_type) VALUES (?, ?, ?, ?, ?, ?);');
 
-        if (!$stmt->execute(array($product->getName(), $product->getDesc(), $product->getPrize(), $product->getStock(), $product->getImg()))){
+        if (!$stmt->execute(array($product->getName(), $product->getDesc(), $product->getPrize(), $product->getStock(), $product->getImg(), $product->getType()))){
             $stmt = null;
             header("location: ../addProduct.php?error=stmtfailed");
             exit();

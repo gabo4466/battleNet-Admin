@@ -82,21 +82,21 @@ FOREIGN KEY (fk_employees) REFERENCES employees (id_employees),
 PRIMARY KEY (id_news)
 );
 
-create table forum (
-id_forum int not null auto_increment,
-forum_name varchar (128) not null,
-forum_description varchar (128) not null,
+create table forums (
+id_forums int not null auto_increment,
+forums_name varchar (128) not null,
+forums_description varchar (128) not null,
 fk_employees int not null,
 FOREIGN KEY (fk_employees) REFERENCES employees (id_employees),
-PRIMARY KEY (id_forum)
+PRIMARY KEY (id_forums)
 );
 
 create table channels (
 id_channels int not null auto_increment,
 channels_name varchar (128) not null,
 channels_description varchar (128) not null,
-fk_forum int not null,
-FOREIGN KEY (fk_forum) REFERENCES forum (id_forum),
+fk_forums int not null,
+FOREIGN KEY (fk_forums) REFERENCES forums (id_forums),
 PRIMARY KEY (id_channels)
 );
 

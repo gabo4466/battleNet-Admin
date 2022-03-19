@@ -122,3 +122,10 @@ PRIMARY KEY (id_comments)
 );
 
 insert into employees (employees_name, employees_nif, employees_address, employees_email, employees_password)  values ('Admin', '123456789', '', 'admin@battle.net.com', '$2y$10$2iHwtVWo3CDiWDLIZKTRqeGl.jweo/o5O8yO2HE0u9nMZ0QuPUO.G');
+insert into forums (forums_name, forums_description, fk_employees) values ('Diablo III', 'El foro para los aventureros que se adentren en las tierras de Santuario', 1);
+
+insert into channels (channels_name, channels_description, fk_forums) values ('General', 'Información general del juego', 1);
+insert into channels (channels_name, channels_description, fk_forums) values ('Tutoriales', 'Ayuda a los newbies', 1);
+insert into channels (channels_name, channels_description, fk_forums) values ('Historia', 'Lore del juego', 1);
+insert into channels (channels_name, channels_description, fk_forums) values ('Parches', 'Notas del parche', 1);
+insert into channels (channels_name, channels_description, fk_forums) values ('LFG', 'Únete a otros aventureros', 1);

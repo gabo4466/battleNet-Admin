@@ -103,7 +103,7 @@ PRIMARY KEY (id_channels)
 create table threads (
 id_threads int not null auto_increment,
 threads_name varchar (128) not null,
-threads_description varchar (128) not null,
+threads_description text not null,
 fk_channels int not null,
 fk_users int not null,
 FOREIGN KEY (fk_channels) REFERENCES channels (id_channels),
@@ -123,9 +123,45 @@ PRIMARY KEY (id_comments)
 
 insert into employees (employees_name, employees_nif, employees_address, employees_email, employees_password)  values ('Admin', '123456789', '', 'admin@battle.net.com', '$2y$10$2iHwtVWo3CDiWDLIZKTRqeGl.jweo/o5O8yO2HE0u9nMZ0QuPUO.G');
 insert into forums (forums_name, forums_description, fk_employees) values ('Diablo III', 'El foro para los aventureros que se adentren en las tierras de Santuario', 1);
+insert into forums (forums_name, forums_description, fk_employees) values ('Diablo IV', 'El foro para aquellos ávidos de próximas aventuras en el siguiente gran lanzamiento de Blizzard', 1);
+insert into forums (forums_name, forums_description, fk_employees) values ('Overwatch', 'El foro para los amantes del shooter multijugador competitivo más cañero', 1);
+insert into forums (forums_name, forums_description, fk_employees) values ('Starcraft 2', 'El foro para los amantes de este juego de estrategia táctico espacial', 1);
+insert into forums (forums_name, forums_description, fk_employees) values ('Hearthstone', 'El foro para los aficionados al juego de cartas basado en el World of Warcraft', 1);
+insert into forums (forums_name, forums_description, fk_employees) values ('World of Warcraft', 'El foro para el mayor MMORPG creado jamás ', 1);
 
 insert into channels (channels_name, channels_description, fk_forums) values ('General', 'Información general del juego', 1);
 insert into channels (channels_name, channels_description, fk_forums) values ('Tutoriales', 'Ayuda a los newbies', 1);
 insert into channels (channels_name, channels_description, fk_forums) values ('Historia', 'Lore del juego', 1);
 insert into channels (channels_name, channels_description, fk_forums) values ('Parches', 'Notas del parche', 1);
 insert into channels (channels_name, channels_description, fk_forums) values ('LFG', 'Únete a otros aventureros', 1);
+
+insert into channels (channels_name, channels_description, fk_forums) values ('General', 'Información general del juego', 2);
+insert into channels (channels_name, channels_description, fk_forums) values ('Noticias', 'Información actualizada sobre las novedades del juego', 2);
+insert into channels (channels_name, channels_description, fk_forums) values ('Cambios', 'Novedades del juego respecto a la saga Diablo', 2);
+
+insert into channels (channels_name, channels_description, fk_forums) values ('General', 'Información general del juego', 3);
+insert into channels (channels_name, channels_description, fk_forums) values ('Consejos', 'Ayuda para los novatos', 3);
+insert into channels (channels_name, channels_description, fk_forums) values ('Historia', 'Lore del juego', 3);
+insert into channels (channels_name, channels_description, fk_forums) values ('Parches', 'Notas del parche', 3);
+insert into channels (channels_name, channels_description, fk_forums) values ('Buscando compañeros', 'Encuentra a más jugadores de Overwatch para combatir', 3);
+
+insert into channels (channels_name, channels_description, fk_forums) values ('General', 'Información general del juego', 4);
+insert into channels (channels_name, channels_description, fk_forums) values ('Tutoriales', 'Ayuda a los newbies', 4);
+insert into channels (channels_name, channels_description, fk_forums) values ('Historia', 'Lore del juego', 4);
+insert into channels (channels_name, channels_description, fk_forums) values ('Parches', 'Notas del parche', 4);
+insert into channels (channels_name, channels_description, fk_forums) values ('Consejos', 'Los mejores consejos y trucos para dominar el espacio', 4);
+
+insert into channels (channels_name, channels_description, fk_forums) values ('General', 'Información general del juego', 5);
+insert into channels (channels_name, channels_description, fk_forums) values ('Tutoriales', 'Ayuda a los newbies', 5);
+insert into channels (channels_name, channels_description, fk_forums) values ('Actualizaciones', 'Notas de las actualizaciones', 5);
+insert into channels (channels_name, channels_description, fk_forums) values ('Intercambio de cartas', 'Para crearte los mejores mazos, nada como intercambiar', 5);
+
+insert into channels (channels_name, channels_description, fk_forums) values ('General', 'Información general del juego', 6);
+insert into channels (channels_name, channels_description, fk_forums) values ('Tutoriales', 'Ayuda a los newbies', 6);
+insert into channels (channels_name, channels_description, fk_forums) values ('Historia', 'Lore del juego', 6);
+insert into channels (channels_name, channels_description, fk_forums) values ('Parches', 'Notas del parche', 6);
+insert into channels (channels_name, channels_description, fk_forums) values ('Raids & dungeons', 'Únete a otros aventureros para completar las raids y las dungeons más exigentes', 6);
+
+insert into threads (threads_name, threads_description, fk_channels, fk_users) values ('¡Ayuda, soy un novato!', 'Necesito ayuda para comenzar a jugar, soy un masilla', 1, 1);
+insert into threads (threads_name, threads_description, fk_channels, fk_users) values ('¿La mejor clase para empezar?', 'Dudando entre Cruzado o Nigromante', 1, 1);
+insert into threads (threads_name, threads_description, fk_channels, fk_users) values ('Nueva expansión', '¿Alguien sabe cuando van a meter la 3.2?', 1, 1);
